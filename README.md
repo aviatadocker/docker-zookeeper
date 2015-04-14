@@ -1,4 +1,4 @@
-# Docker-zookeeper
+# Docker Zookeeper
 Builds a docker image for Zookeeper.
 
 ## Summary
