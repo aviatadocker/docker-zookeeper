@@ -7,7 +7,7 @@
 FROM dalekurt/java7
 MAINTAINER Dale-Kurt Murray "dalekurt.murray@gmail.com"
 
-RUN apt-get update && apt-get install -y wget
+RUN apt-get update && apt-get install -y wget supervisor
 RUN wget -q -O - http://apache.mirrors.pair.com/zookeeper/zookeeper-3.4.6/zookeeper-3.4.6.tar.gz | tar -xzf - -C /opt \
     && mv /opt/zookeeper-3.4.6 /opt/zookeeper \
     && cp /opt/zookeeper/conf/zoo_sample.cfg /opt/zookeeper/conf/zoo.cfg \
@@ -21,5 +21,6 @@ WORKDIR /opt/zookeeper
 
 VOLUME ["/opt/zookeeper/conf", "/tmp/zookeeper"]
 
-ENTRYPOINT ["/opt/zookeeper/bin/zkServer.sh"]
+#ENTRYPOINT ["/opt/zookeeper/bin/zkServer.sh"]
 CMD ["start-foreground"]
+CMD ["supervisord", "-n"]
