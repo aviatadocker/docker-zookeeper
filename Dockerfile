@@ -9,7 +9,7 @@ FROM dalekurt/java7
 MAINTAINER Dale-Kurt Murray "dalekurt.murray@gmail.com"
 
 # Basic environment setup
-RUN apt-get update && apt-get install -y wget supervisor
+RUN apt-get update && apt-get install -y wget
 
 # Downloading and install zookeeper
 RUN wget -q -O - http://apache.mirrors.pair.com/zookeeper/zookeeper-3.4.6/zookeeper-3.4.6.tar.gz | tar -xzf - -C /opt \
@@ -27,4 +27,3 @@ VOLUME ["/opt/zookeeper/conf", "/tmp/zookeeper"]
 
 ENTRYPOINT ["/opt/zookeeper/bin/zkServer.sh"]
 CMD ["start-foreground"]
-#CMD ["supervisord", "-n"]
