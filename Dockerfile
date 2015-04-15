@@ -25,6 +25,6 @@ WORKDIR /opt/zookeeper
 
 VOLUME ["/opt/zookeeper/conf", "/tmp/zookeeper"]
 
-#ENTRYPOINT ["/opt/zookeeper/bin/zkServer.sh"]
+ENTRYPOINT ["/opt/zookeeper/bin/zkServer.sh"]
 CMD ["start-foreground"]
-CMD ["supervisord", "-n"]
+#CMD ["supervisord", "-n"]
