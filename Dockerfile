@@ -6,7 +6,7 @@
 
 FROM stackbrew/ubuntu
 
-MAINTAINER Dale-Kurt Murray "dalekurt.murray@gmail.com"
+MAINTAINER jmarsh.ext "jmarsh.ext@aviatainc.com"
 
 # Basic environment setup
 RUN apt-get update && apt-get install -y wget openjdk-7-jre-headless
